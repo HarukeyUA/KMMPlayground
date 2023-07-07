@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.compose.material)
     implementation(libs.compose.ui.util)
     implementation(libs.activity.compose)
+    implementation(libs.androidx.emoji2)
 
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.test.manifest)

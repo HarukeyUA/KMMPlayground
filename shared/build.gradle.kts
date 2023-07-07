@@ -45,6 +45,8 @@ kotlin {
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.content.negotiator)
                 implementation(libs.ktor.serialization.kotlinx.json)
+                implementation(libs.ktor.client.resources)
+                implementation(libs.ktor.client.logging)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.sqldelight.runtime)
                 implementation(libs.sqldelight.primitive.adapters)
@@ -63,7 +65,7 @@ kotlin {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.sqldelight.android.driver)
-                implementation(libs.koin.android)
+                api(libs.koin.android)
             }
         }
         val iosMain by getting {

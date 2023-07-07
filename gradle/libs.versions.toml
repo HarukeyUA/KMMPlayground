@@ -8,7 +8,7 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.9.0"
-kotlinx-coroutines = "1.7.1"
+kotlinx-coroutines = "1.7.2"
 kotlinx-serialization-json = "1.5.1"
 compose-compiler = "1.4.8"
 ktor-client = "2.3.2"
@@ -20,6 +20,7 @@ decompose = "2.0.0"
 essenty = "1.1.0"
 compose-bom = "2023.06.01"
 activity-compose = "1.7.2"
+emoji2 = "1.3.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -51,6 +52,8 @@ ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.r
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor-client" }
 ktor-client-content-negotiator = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor-client" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor-client" }
+ktor-client-resources = { group = "io.ktor", name = "ktor-client-resources", version.ref = "ktor-client" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor-client" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar-jdk-libs" }
 sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqldelight" }
@@ -64,6 +67,7 @@ decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref
 decompose-extensions-compose-jetpack = { group = "com.arkivanov.decompose", name = "extensions-compose-jetpack", version.ref = "decompose" }
 essenty-lifecycle = { group = "com.arkivanov.essenty", name = "lifecycle", version.ref = "essenty" }
 essenty-state-keeper = { group = "com.arkivanov.essenty", name = "state-keeper", version.ref = "essenty" }
+androidx-emoji2 = { group = "androidx.emoji2", name = "emoji2", version.ref = "emoji2" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

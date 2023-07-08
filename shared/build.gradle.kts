@@ -33,6 +33,7 @@ kotlin {
 
             export(libs.decompose)
             export(libs.essenty.lifecycle)
+            export(libs.essenty.state.keeper)
         }
     }
 
@@ -52,7 +53,9 @@ kotlin {
                 implementation(libs.sqldelight.primitive.adapters)
                 implementation(libs.sqldelight.coroutines.extensions)
                 implementation(libs.koin.core)
-                implementation(libs.decompose)
+                api(libs.decompose)
+                api(libs.essenty.lifecycle)
+                api(libs.essenty.state.keeper)
             }
         }
         val commonTest by getting {

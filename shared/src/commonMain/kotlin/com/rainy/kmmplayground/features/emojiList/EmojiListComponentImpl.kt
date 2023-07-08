@@ -15,10 +15,14 @@ sealed class EmojisListState {
     data class Success(val list: List<Emoji>) : EmojisListState()
 }
 
-class EmojiListComponent(
+interface EmojiListComponent {
+    val uiState: Value<EmojisListState>
+}
+
+class EmojiListComponentImpl(
     componentContext: ComponentContext,
     private val emojiRemoteDataSource: EmojiRemoteDataSource
-) : ComponentContext by componentContext {
+) : ComponentContext by componentContext, EmojiListComponent {
 
     private val coroutineScope = coroutineScope()
     private val defaultExceptionHandler = CoroutineExceptionHandler { _, _ ->
@@ -26,7 +30,7 @@ class EmojiListComponent(
     }
 
     private val _uiState = MutableValue<EmojisListState>(EmojisListState.Loading)
-    val uiState: Value<EmojisListState> get() = _uiState
+    override val uiState: Value<EmojisListState> get() = _uiState
 
     init {
         coroutineScope.launch(defaultExceptionHandler) {

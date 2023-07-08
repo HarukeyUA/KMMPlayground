@@ -10,7 +10,7 @@ data class Emoji(
     val unicode: String
 )
 
-internal fun EmojiResponse.toDomain(): Emoji {
+fun EmojiResponse.toDomain(): Emoji {
     return Emoji(
         category = category ?: "",
         group = group ?: "",

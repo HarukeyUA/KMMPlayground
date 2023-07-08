@@ -21,6 +21,7 @@ essenty = "1.1.0"
 compose-bom = "2023.06.01"
 activity-compose = "1.7.2"
 emoji2 = "1.3.0"
+parcelize-darwin = "0.1.4"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -67,6 +68,9 @@ decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref
 decompose-extensions-compose-jetpack = { group = "com.arkivanov.decompose", name = "extensions-compose-jetpack", version.ref = "decompose" }
 essenty-lifecycle = { group = "com.arkivanov.essenty", name = "lifecycle", version.ref = "essenty" }
 essenty-state-keeper = { group = "com.arkivanov.essenty", name = "state-keeper", version.ref = "essenty" }
+essenty-instance-keeper = { group = "com.arkivanov.essenty", name = "instance-keeper", version.ref = "essenty" }
+essenty-back-handler = { group = "com.arkivanov.essenty", name = "back-handler", version.ref = "essenty" }
+
 androidx-emoji2 = { group = "androidx.emoji2", name = "emoji2", version.ref = "emoji2" }
 
 [plugins]

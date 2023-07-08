@@ -16,8 +16,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.emoji2.text.EmojiCompat
 import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
@@ -25,6 +23,7 @@ import com.rainy.kmmplayground.domain.model.Emoji
 import com.rainy.kmmplayground.features.emojiList.EmojiListComponent
 import com.rainy.kmmplayground.features.emojiList.EmojisListState
 import com.rainy.kmmplayground.features.root.RootComponent
+import com.rainy.kmmplayground.features.root.RootComponentImpl
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val appComponent =
-            RootComponent(
+            RootComponentImpl(
                 defaultComponentContext()
             )
         setContent {
@@ -102,9 +101,7 @@ class MainActivity : ComponentActivity() {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(items) {
                 val emojiCode = remember(it) {
-                    EmojiCompat.get()
-                        .process(Html.fromHtml(it.htmlCode, Html.FROM_HTML_MODE_COMPACT))
-                        .toString()
+                    Html.fromHtml(it.htmlCode, Html.FROM_HTML_MODE_COMPACT).toString()
                 }
                 ListItem(
                     icon = {
@@ -118,18 +115,5 @@ class MainActivity : ComponentActivity() {
 
             }
         }
-    }
-}
-
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
-
-@Preview
-@Composable
-fun DefaultPreview() {
-    MyApplicationTheme {
-        GreetingView("Hello, Android!")
     }
 }
